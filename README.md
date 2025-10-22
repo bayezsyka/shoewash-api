@@ -6,8 +6,8 @@ Proyek ini adalah tugas responsi pembuatan REST API menggunakan **Node.js** dan 
 
 > **Output yang diunggah**
 >
-> 1. 📦 Link GitHub Repository
-> 2. 🌐 Link Deploy (Vercel)
+> 1. 📦 https://github.com/bayezsyka/shoewash-api.git
+> 2. 🌐 https://shoewash-api.vercel.app/
 
 ---
 
@@ -22,10 +22,10 @@ Proyek ini adalah tugas responsi pembuatan REST API menggunakan **Node.js** dan 
 
 ## Teknologi
 
-* **Node.js** — runtime server.
-* **Express.js** — framework REST API.
-* **Supabase (Postgres)** — basis data.
-* **Vercel** — hosting serverless.
+- **Node.js** — runtime server.
+- **Express.js** — framework REST API.
+- **Supabase (Postgres)** — basis data.
+- **Vercel** — hosting serverless.
 
 ---
 
@@ -33,12 +33,12 @@ Proyek ini adalah tugas responsi pembuatan REST API menggunakan **Node.js** dan 
 
 | Metode | Endpoint         | Deskripsi                                                        |
 | :----: | ---------------- | ---------------------------------------------------------------- |
-|   GET  | `/health`        | Cek status layanan.                                              |
-|   GET  | `/items`         | Menampilkan seluruh daftar sepatu.                               |
-|   GET  | `/items/:id`     | Menampilkan detail sepatu berdasarkan ID.                        |
-|   GET  | `/items?status=` | **Filter** berdasarkan status (`Menunggu/Proses/Selesai/Batal`). |
+|  GET   | `/health`        | Cek status layanan.                                              |
+|  GET   | `/items`         | Menampilkan seluruh daftar sepatu.                               |
+|  GET   | `/items/:id`     | Menampilkan detail sepatu berdasarkan ID.                        |
+|  GET   | `/items?status=` | **Filter** berdasarkan status (`Menunggu/Proses/Selesai/Batal`). |
 |  POST  | `/items`         | Menambahkan data sepatu baru.                                    |
-|  PATCH | `/items/:id`     | Memperbarui sebagian field (misal ubah status ke `Selesai`).     |
+| PATCH  | `/items/:id`     | Memperbarui sebagian field (misal ubah status ke `Selesai`).     |
 | DELETE | `/items/:id`     | Menghapus data sepatu.                                           |
 
 > **Status valid:** `Menunggu`, `Proses`, `Selesai`, `Batal` (API menerima case-insensitive).
@@ -162,8 +162,8 @@ Content-Type: application/json
 
 **Error**
 
-* `400` — field wajib kosong / `status` tidak valid.
-* `500` — kesalahan server/konfigurasi Supabase.
+- `400` — field wajib kosong / `status` tidak valid.
+- `500` — kesalahan server/konfigurasi Supabase.
 
 ---
 
@@ -198,7 +198,7 @@ GET /items?status=Selesai
 
 **Error**
 
-* `400` — nilai `status` tidak valid.
+- `400` — nilai `status` tidak valid.
 
 ---
 
@@ -226,7 +226,7 @@ GET /items/:id
 
 **Error**
 
-* `404` — item tidak ditemukan.
+- `404` — item tidak ditemukan.
 
 ---
 
@@ -253,8 +253,8 @@ Content-Type: application/json
 
 **Error**
 
-* `400` — `status` tidak valid.
-* `404` — item tidak ditemukan.
+- `400` — `status` tidak valid.
+- `404` — item tidak ditemukan.
 
 ---
 
@@ -274,7 +274,7 @@ DELETE /items/:id
 
 **Error**
 
-* `404` — item tidak ditemukan.
+- `404` — item tidak ditemukan.
 
 ---
 
@@ -324,7 +324,7 @@ npm run dev
 
 ```js
 // Ekspor Express app sebagai handler Vercel
-const app = require('../src/app');
+const app = require("../src/app");
 module.exports = app; // atau: (req, res) => app(req, res)
 ```
 
@@ -344,8 +344,8 @@ module.exports = app; // atau: (req, res) => app(req, res)
 
 **Postman**
 
-* Import koleksi uji (atau buat request manual).
-* Base URL produksi: `https://<project>.vercel.app` (atau `http://localhost:3000` saat lokal).
+- Import koleksi uji (atau buat request manual).
+- Base URL produksi: `https://<project>.vercel.app` (atau `http://localhost:3000` saat lokal).
 
 **Contoh cURL**
 
