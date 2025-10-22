@@ -1,0 +1,151 @@
+{
+  "info": {
+    "name": "ShoeWash API",
+    "_postman_id": "d1e1f1e9-0000-0000-0000-000000000000",
+    "description": "Koleksi request untuk menguji ShoeWash API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://<project>.vercel.app/health",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"customer_name\": \"Budi\", \"brand\": \"Nike\", \"size\": \"42\", \"service_type\": \"Deep Clean\", \"status\": \"Menunggu\", \"promised_date\": \"2025-10-30\", \"price\": 60000, \"note\": \"Ada noda di ujung\"}"
+        },
+        "url": {
+          "raw": "https://<project>.vercel.app/items",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "items"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Items (status=Selesai)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://<project>.vercel.app/items?status=Selesai",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "items"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "Selesai"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Detail",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://<project>.vercel.app/items/:id",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "items",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"status\": \"Selesai\", \"price\": 75000}"
+        },
+        "url": {
+          "raw": "https://<project>.vercel.app/items/:id",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "items",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://<project>.vercel.app/items/:id",
+          "protocol": "https",
+          "host": [
+            "<project>",
+            "vercel",
+            "app"
+          ],
+          "path": [
+            "items",
+            ":id"
+          ]
+        }
+      }
+    }
+  ]
+}
